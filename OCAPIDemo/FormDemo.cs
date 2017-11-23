@@ -24,23 +24,32 @@ namespace OCAPIDemo
             {
                 string html = api.HttpGet(this.textBoxXml.Text, Encoding.UTF8);
                 this.textBoxXmlResult.Text = api.CaiPiaoDataHandleForXML(html);
-
+                string result = "";
                 string LastNumber = api.GetCaiPiaoResultLastTime(html);
-
-                int goodNumberCount = 0;
-                string GoodNumberList = api.GetCaiPiaoResultLastTimeForCustomer(LastNumber, textBox1.Text, out goodNumberCount);
-
-                this.textBoxXmlResult.Text += "\r\n" + "中" + goodNumberCount.ToString() + "号码。" + "\r\n";
-                if (goodNumberCount > 0)
+                bool IsBlueNumber = false;
+                string[] CostomerNumberList = new string[4] { "05,08,15,16,23,31 + 03", "02,06,11,16,17,22 + 09", "03,10,19,22,25,31 + 08", "06,11,13,25,26,30 + 07" };
+                for (int i = 0; i < CostomerNumberList.Length; i++)
                 {
-                    this.textBoxXmlResult.Text += "中的号码是：" + GoodNumberList + "\r\n";
-                }
-                else
-                {
-                    this.textBoxXmlResult.Text += "一个都没有中！！！！！" + "\r\n";
+                    result += "\r\n"+"客户号码 " + i.ToString() + ": " + CostomerNumberList[i] ;
+                    int goodNumberCount = 0;
+                    string GoodNumberList = api.GetCaiPiaoResultLastTimeForCustomer(LastNumber, CostomerNumberList[i], out goodNumberCount, out IsBlueNumber);
+                    result += "\r\n" + "中" + goodNumberCount.ToString() + "个普通号码。" + "\r\n";
+                    if (goodNumberCount > 0)
+                    {
+                        result += "中的号码是：" + GoodNumberList + "\r\n";
+                    }
+                    else
+                    {
+                        result += "普通号码一个都没有中！！！！！" + "\r\n";
+                    }
+
+                    if (IsBlueNumber)
+                    {
+                        result += "恭喜发财，中了一个特别号码！！！！！" + "\r\n";
+                    }
                 }
 
-
+                this.textBoxXmlResult.Text = result + "\r\n";
             }
             catch (Exception ex) { this.textBoxXmlResult.Text = "采集出现错误：" + ex.Message; }
         }

@@ -30,3 +30,11 @@ D:\csharp4json\OCAPIDemo\obj\Debug\OCAPIDemo.csprojResolveAssemblyReference.cach
 D:\csharp4json\OCAPIDemo\obj\Debug\OCAPIDemo.FormDemo.resources
 D:\csharp4json\OCAPIDemo\obj\Debug\OCAPIDemo.Properties.Resources.resources
 D:\csharp4json\OCAPIDemo\obj\Debug\OCAPIDemo.csproj.GenerateResource.Cache
+E:\GitHub\csharp4json\OCAPIDemo\obj\Debug\OCAPIDemo.exe
+E:\GitHub\csharp4json\OCAPIDemo\obj\Debug\OCAPIDemo.pdb
+E:\GitHub\csharp4json\OCAPIDemo\bin\Debug\OCAPIDemo.exe
+E:\GitHub\csharp4json\OCAPIDemo\bin\Debug\OCAPIDemo.pdb
+E:\GitHub\csharp4json\OCAPIDemo\obj\Debug\OCAPIDemo.csprojResolveAssemblyReference.cache
+E:\GitHub\csharp4json\OCAPIDemo\obj\Debug\OCAPIDemo.FormDemo.resources
+E:\GitHub\csharp4json\OCAPIDemo\obj\Debug\OCAPIDemo.Properties.Resources.resources
+E:\GitHub\csharp4json\OCAPIDemo\obj\Debug\OCAPIDemo.csproj.GenerateResource.Cache

@@ -93,7 +93,7 @@ namespace OCAPIDemo
         }
 
 
-        public static string GetCaiPiaoResultLastTimeForCustomer(string OpenNumber, string CustomerNumber, out int goodNumberCount)
+        public static string GetCaiPiaoResultLastTimeForCustomer(string OpenNumber, string CustomerNumber, out int goodNumberCount, out bool IsBlueNumber)
         {
             //开奖期号：2017137
             //开奖号码：05,10,20,23,26,31 + 03
@@ -121,6 +121,14 @@ namespace OCAPIDemo
                 }
             }
 
+            if (int.Parse(OpenNumberBlue) == int.Parse(CustomerNumberBlue))
+            {
+                IsBlueNumber = true;
+            }
+            else
+            {
+                IsBlueNumber = false;
+            }
             return goodNumberString;
         }
 
